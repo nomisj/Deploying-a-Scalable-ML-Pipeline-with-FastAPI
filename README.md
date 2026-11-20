@@ -1,29 +1,26 @@
-Working in a command line environment is recommended for ease of use with git and dvc. If on Windows, WSL1 or 2 is recommended.
+# Project Overview
 
-# Environment Set up (pip or conda)
-* Option 1: use the supplied file `environment.yml` to create a new environment with conda
-* Option 2: use the supplied file `requirements.txt` to create a new environment with pip
-    
-## Repositories
-* Create a directory for the project and initialize git.
-    * As you work on the code, continually commit changes. Trained models you want to use in production must be committed to GitHub.
-* Connect your local git repo to GitHub.
-* Setup GitHub Actions on your repo. You can use one of the pre-made GitHub Actions if at a minimum it runs pytest and flake8 on push and requires both to pass without error.
-    * Make sure you set up the GitHub Action to have the same version of Python as you used in development.
+This project implements a machine learning pipeline to predict whether an individual's annual income exceeds $50,000 using U.S. Census data.
 
-# Data
-* Download census.csv and commit it to dvc.
-* This data is messy, try to open it in pandas and see what you get.
-* To clean it, use your favorite text editor to remove all spaces.
+The project also includes data preprocessing, model training and evaluation, a RESTful prediction API built with FastAPI, automated testing, and integration using GitHub Actions.
 
-# Model
-* Using the starter code, write a machine learning model that trains on the clean data and saves the model. Complete any function that has been started.
-* Write unit tests for at least 3 functions in the model code.
-* Write a function that outputs the performance of the model on slices of the data.
-    * Suggestion: for simplicity, the function can just output the performance on slices of just the categorical features.
-* Write a model card using the provided template.
+# Project Features
 
-# API Creation
-*  Create a RESTful API using FastAPI this must implement:
-    * GET on the root giving a welcome message.
-    * POST that does model inference.
+- Data cleaning and preprocessing of the Census dataset
+- Machine learning model training and evaluation
+- Model performance evaluation across categorical data slices
+- FastAPI endpoints for API information and income predictions
+- Automated unit tests and API tests using pytest
+- Continuous integration using GitHub Actions
+- Saved model and encoder artifacts for inference
+
+# Technologies Used
+
+- Python 3.10
+- pandas
+- scikit-learn
+- FastAPI
+- Pydantic
+- pytest
+- flake8
+- Git and GitHub Actions
